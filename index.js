@@ -13,7 +13,7 @@ const puppeteer = require('puppeteer');
         await Delay(5000);
 
         // Nome do contato para enviar mensagens;
-        const contactName = "Isabela";
+        const contactName = "Joas";
         
         await page.click(`span[title = '${ contactName }']`);
         await page.waitForSelector(".OTBsx");
@@ -23,13 +23,11 @@ const puppeteer = require('puppeteer');
 
         // Quantidade de mensagens a serem enviadas;
         const amountOfMessages = 500;
-        //const amountOfMessages = 10;
 
         for(var i = 0; i <= amountOfMessages; i++){
             await page.evaluate(() => {
                 // Definindo mensagem a ser enviada;
-                const message = "Você foi escolhido(a) pelo robô!";
-                //const message = "Vitu é *Lindo* e fez um robô *foda*!";
+                const message = "Testando Robô!";
 
                 document.execCommand("insertText", false, message);
             });
